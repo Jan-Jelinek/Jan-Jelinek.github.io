@@ -5,30 +5,123 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <title>Jan Jelinek Portfolio</title>
+    <title>Jan Jelinek</title>
   </head>
+  <!--<nav>
+    <div class="nav-item"><a href="#skills">Experience</a></div>
+    <div class="nav-item"><a href="#projects">Projects</a></div>
+    <div class="nav-item"><a href="#contact">Contact</a></div>
+  </nav>-->
   <body>
-    <div class="hero">
+    <div class="hero" id="hero">
       <div class="hero-text">
-        <h1>:)</h1>
+        <h1 class="hero-title">Hi! I'm Jan Jelinek.</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at ex ac ipsum auctor dictum quis a nisi. Nam non odio quis nisi hendrerit tincidunt. Duis ultrices turpis vel orci viverra, vehicula rutrum tellus venenatis. Curabitur tempus hendrerit dolor luctus luctus. Duis ac interdum libero. Maecenas varius quam id lorem tempor, eget blandit mauris consequat. Suspendisse leo est, porttitor eget placerat sed, consectetur nec mi.
+        </p>
+        <br>
+        <p>Follow me on Github: <a href="https://github.com/Jan-Jelinek">Jan-Jelinek</a>  or send an email at <a href="mailto:JanJelinek.dev@gmail.com">JanJelinek.dev@gmail.com</a></p>
+        <br>
+        <button class="resume">View Resume</button>
       </div>
     </div>
-    <div class="education">
-      <div class="uni">
-
+    <script src="index.js"></script>
+    <main>
+      <div class="experience">
+        <h1 class="title-1"><span>EXPERIENCE</span></h1>
+        <div class="education">
+          <div class="uofc-logo">
+            <img class="logo" src="/images/uofc.png" alt="University of Calgary Coat of Arms" width="100%">
+          </div>
+          <div>
+            <h2 class="title-2">Education</h2>          
+            <div class="title-3">Bachelor of Science, Computer Science</div>
+            <div class="uni">
+              <div class="title-4">University of Calgary</div>
+              <div class="uni-when">SEPT 2018 - APRL 2022</div>
+            </div>
+            <div class="courses">
+              <h3 class="list-title">Relevant Courses</h3>
+              <ul class="courses-list">
+                <li><b>Data Structures:</b> Data Structures, Algorithms, and Their Analysis, Design and Analysis of Algorithms I</li>
+                <li><b>Databases:</b> Data Base Management Systems, Design and Implementation of Database Systems</li>
+                <li><b>Networks:</b> Computer Networks, Introduction to Distributed Systems</li>
+                <li><b>Other:</b> Principles of Operating Systems, Web-Based Systems</li>
+              </ul>  
+            </div>
+          </div>
+        </div>
+        <div class="work-experience">
+          <div class="job">
+            <div class="job-text">
+              <h2 class="title-2">Work Experience</h2>
+              <div class="title-3">Research Assistant</div>
+              <div class="title-4">Defi Reseach - Professor Alfred Lehar</div>  
+              <div class="job-accomplishments">
+                <h3 class="list-title">Accomplishments</h3>
+                <ul>
+                  <li>Designed an algorithm which detects transactions that involve the block miners and/or send private transfers to the miner using <b>Go Ethereum</b> tracing.</li>
+                  <li>Regularly updates a <b>PostgreSQL</b> database as it searches through millions of ethereum blocks.</li>
+                  <li>Utilized <b>concurrency</b> to simultaneously process up to 30 blocks.</li>
+                </ul>  
+              </div>
+            </div>
+            <div class="job-logo">
+              <img class="logo" src="/images/eth-diamond-purple-small.png" alt="University of Calgary Coat of Arms" width="100%">
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="research">
-
+      <div class="projects">
+        <h1 class="title-1"><span>PROJECTS</span></h1>
+        <br><br>
+        <button class="project left" onclick=" window.open('https://github.com/oscarwong67/Competl','_blank')">
+          <img class="project-image" src="/images/competl.png">
+          <div class="project-header">
+            <h2><b>Competl</b></h2>
+            <h3><i>Next, Express, React, MongoDB</i></h3>
+          </div>
+        </button>
+        <button class="project right" onclick=" window.open('https://github.com/Jan-Jelinek/ChatApp','_blank')">
+          <img class="project-image" src="/images/chatapp.png">
+          <div class="project-header">
+            <h2><b>Chat App</b></h2>
+            <h3><i>Node.js, Socket.io, JavaScript</i></h3>
+          </div>
+        </button>
+        <button class="project left" onclick=" window.open('https://github.com/stevenloppe/571-term-project','_blank')">
+          <img class="project-image" src="images/stocksentimenttracker2.png">
+          <div class="project-header">
+            <h2><b>Stock Sentiment Tracker</b></h2>
+            <h3><i>Django, Python, MongoDB</i></h3>
+          </div>
+        </button>
+        <button class="project right" onclick=" window.open('https://github.com/Jan-Jelinek/Jan-Jelinek.github.io','_blank')">
+          <img class="project-image" src="images/janjelinekca.png">
+          <div class="project-header">
+            <h2><b>JanJelinek.ca</b></h2>
+            <h3><i>HTML, SCSS</i></h3>
+          </div>
+        </button>
+        <button class="project left" onclick=" window.open('https://github.com/RMcCurdy/Bandwagon','_blank')">
+          <img class="project-image" src="images/bandwagon.png">
+          <div class="project-header">
+            <h2><b>BandWagon</b></h2>
+            <h3><i>ASP.NET, React, SQLite</i></h3>
+          </div>
+        </button>
       </div>
-    </div>
-    <div class="projects">
-
-    </div>
-    <div class="other">
-      
-    </div>
-    <div class="contact">
-
+      <!--<div class="contact">
+        <h1 class="title-1"><span>CONTACT</span></h1>
+      </div>-->
+      <div class="arrow-container">
+        <button class="return-arrow" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'})">
+          <img class="up" src="images/chevron-up.svg">
+        </button>  
+      </div>
+    </main>
+    <div class="footer">
+      <h4>DESIGNED AND BUILT BY JAN JELINEK</h4>
     </div>
   </body>
 </html>

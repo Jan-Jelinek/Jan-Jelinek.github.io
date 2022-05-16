@@ -3,25 +3,43 @@ body, html {
   margin: 0;
   border: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: #111;
   font-family: Arial, Helvetica, sans-serif;
 }
 
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: fixed;
+  width: 100%;
+}
+
+nav .nav-item {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  padding: 1rem;
+}
+
 .hero {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/background.png"); */
-  background-color: black;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url("./images/background.png");
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/background.png");
-  background-position: center;
-  background-repeat: no-repeat;
   /* Set a specific height */
-  height: 100%;
-  /* Position and center the image to scale nicely on all screens */
+  height: 100vh;
+  width: 100%;
+  margin: auto;
+  /*
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("./images/portfoliobg.jpg");
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+  background-attachment: fixed;
+  */
 }
 
 .hero .hero-text {
@@ -32,5 +50,289 @@ body, html {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fff;
+  width: 60%;
+}
+
+.hero .hero-text .hero-title {
+  font-size: 3rem;
+}
+
+.hero .hero-text a {
+  color: #fff;
+  font-weight: 700;
+}
+
+.hero .hero-text .resume {
+  padding: 16px;
+  border-radius: 4px;
+  background-color: #111;
+  color: white;
+  border: 2px solid white;
+  /* Green */
+  font-size: 1.2rem;
+  -webkit-transition-duration: 0.4s;
+          transition-duration: 0.4s;
+}
+
+.hero .hero-text button:hover {
+  background-color: white;
+  /* Green */
+  color: black;
+}
+
+main {
+  margin: auto;
+  width: 60%;
+  color: white;
+}
+
+main .experience {
+  width: 100%;
+  padding-bottom: 6rem;
+}
+
+main .experience .education {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+main .experience .education .uofc-logo {
+  width: 15%;
+  padding-right: 3rem;
+  max-width: 256px;
+}
+
+main .experience .education .uni {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+main .experience .work-experience .job {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+main .experience .work-experience .job-accomplishments {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+main .experience .work-experience .job-logo {
+  width: 12%;
+  padding-left: 3rem;
+  max-width: 256px;
+}
+
+main .projects {
+  padding-bottom: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .projects .project-type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 2rem 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+main .projects .project {
+  margin: 2rem 0rem;
+  padding: 0.4rem;
+  width: 60%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.38s;
+  /* Safari */
+  transition-duration: 0.38s;
+}
+
+main .projects .project .project-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+main .projects .project .project-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0px 16px;
+}
+
+main .projects .project:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+main .projects .left {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+main .projects .right {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: end;
+}
+
+main .contact {
+  width: 100%;
+  margin: auto;
+}
+
+main .contact .contact-text {
+  text-align: center;
+  color: #fff;
+  width: 60%;
+  padding: 10rem 0rem;
+}
+
+main .arrow-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2rem;
+}
+
+main .arrow-container .return-arrow {
+  cursor: pointer;
+  background: none;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+main .arrow-container .return-arrow .up {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+  width: 24px;
+  padding: 6px;
+}
+
+.footer {
+  color: #eee;
+  text-align: center;
+  background-color: #222;
+  padding: 4px;
+}
+
+.title-1 {
+  font-size: 2rem;
+  font-weight: 700;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  border-bottom: 1px solid white;
+  line-height: 0.1em;
+  padding-top: 1rem;
+}
+
+.title-1 span {
+  background: #111;
+  padding: 0 16px;
+}
+
+.title-2 {
+  font-size: 1.8rem;
+}
+
+.title-3 {
+  font-size: 1.6rem;
+}
+
+.title-4 {
+  font-size: 1.4rem;
+}
+
+.list-title {
+  padding-top: 0.2rem;
+  margin-bottom: -0.3rem;
+}
+
+li {
+  padding-bottom: 0.1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  main {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  main {
+    width: 90%;
+  }
+  main .education {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
