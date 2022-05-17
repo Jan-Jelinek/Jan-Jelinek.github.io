@@ -7,34 +7,12 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-nav {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  position: fixed;
 
-  width: 100%;
-
-  .nav-item {
-    color: white;
-    text-decoration: none;
-    margin: 8px;
-    padding: 1rem;
-  }
-}
-    
 .hero {
-  /* Set a specific height */
   height: 100vh;
   width: 100%;
   margin: auto;
-
-  /*
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("./images/portfoliobg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  */
+  color: white;
 
   .hero-text {
     text-align: center;
@@ -43,7 +21,8 @@ nav {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
-    width: 60%;
+    width: 90%;
+    font-size: 18px;
 
     .hero-title {
       font-size: 3rem;
@@ -59,14 +38,34 @@ nav {
       border-radius: 4px;
       background-color: #111;
       color: white;
-      border: 2px solid white; /* Green */    
+      border: 2px solid white;
       font-size: 1.2rem;
       transition-duration: 0.4s;
+      cursor: pointer;
     }
     
-    button:hover {
-      background-color: white; /* Green */
+    .resume:hover {
+      background-color: white;
       color: black;
+    }
+
+    .follow-text {
+      padding-top: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .links {
+      background: none;
+      color: white;
+      font-size: 20px;
+      height: 2rem; 
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 0;
+
+      .mail {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%)
+      }
     }
   }
 }
@@ -74,109 +73,112 @@ nav {
 
 main {
   margin: auto;
-  width: 60%;
+  width: 95%;
   color: white;
+}
 
-  .experience {
-    width: 100%;
-    padding-bottom: 6rem;
+.experience {
+  width: 100%;
+  padding-bottom: 6rem;
+}
 
-    .education {
-      display: flex;
-      flex-direction: row;
-      justify-content: flex-start;
-      align-items: center;
-      width: 100%;
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+.education {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
   
-      .uofc-logo {
-        width: 15%;
-        padding-right: 3rem;
-        max-width: 256px;
-      }
-
-      .uni {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-      }
-    }
-  
-    .work-experience {
-
-      .job {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        align-items: center;
-        width: 100%;  
-      }
-
-      .job-accomplishments {
-        font-weight: 300;
-        font-size: 1rem;
-      }
-
-      .job-logo {
-        width: 12%;
-        padding-left: 3rem;
-        max-width: 256px;
-      }
-
-    }
-
-  }
-
-  .projects {
-    padding-bottom: 6rem;
+  .uni {
     display: flex;
-    flex-direction: column;
-
-    .project-type {
-      display: flex;
-      padding: 2rem 0;
-      flex-direction: row;
-      justify-content: space-around;
-    }
-
-    .project {
-      margin: 2rem 0rem;
-      padding: 0.4rem;
-      width: 60%;
-      border: 2px solid #fff;
-      border-radius: 8px;
-
-      .project-image {
-        width: 100%;
-        border-radius: 8px;
-      }
-
-      .project-header {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0px 16px;
-      }
-      
-      cursor: pointer;
-      -webkit-transition-duration: 0.38s; /* Safari */
-      transition-duration: 0.38s;
-    }
-    .project:hover {
-      transform: scale(1.1);
-    }
-
-    .left {
-      align-self: flex-start;
-    }
-    .right {
-      align-self: flex-end;
-      align-items: flex-end;
-      text-align: end;
-    }
-      
+    flex-direction: row;
+    justify-content: space-between;
   }
+}
+
+.uofc-logo {
+  display: none;
+  width: 15%;
+  padding-right: 3rem;
+  max-width: 256px;
+}
+
+  
+.work-experience {
+
+  .job {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;  
+  }
+
+  .job-accomplishments {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+}
+
+.job-logo {
+  display: none;
+  width: 12%;
+  padding-left: 3rem;
+  max-width: 256px;
+}  
+
+
+.projects {
+  padding-bottom: 6rem;
+  display: flex;
+  flex-direction: column;      
+}
+
+.project-type {
+  display: flex;
+  padding: 2rem 0;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.left {
+  align-self: flex-start;
+}
+.right {
+  align-self: flex-end;
+  align-items: flex-end;
+  text-align: end;
+}
+
+.project {
+  margin: 2rem 0rem;
+  padding: 0.4rem;
+  width: 100%;
+  border: 2px solid #fff;
+  border-radius: 8px;
+
+  .project-image {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  .project-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 16px;
+  }
+    
+  cursor: pointer;
+  -webkit-transition-duration: 0.38s;
+  transition-duration: 0.38s;
+}
+.project:hover {
+  transform: scale(1.1);
+}
+
 
   .contact {
     width: 100%;
@@ -201,6 +203,7 @@ main {
       background: none;
       border: 2px solid #fff;
       border-radius: 50%;
+
       .up {
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
         width: 24px;
@@ -208,7 +211,8 @@ main {
       }
     }
   }
-}
+
+
 .footer {
   color: #eee;
   text-align: center;
@@ -255,24 +259,47 @@ li {
 }
 
 
-@media only screen and (max-width: 1200px) {
+@media screen and (min-width: 600px) {
   main {
-    width: 65%;
+    width: 90%;
   }
 }
 
-@media only screen and (max-width: 800px) {
+
+@media screen and (min-width: 800px) {
   main {
     width: 80%;
   }
+  .hero-text {
+    width: 80%;
+  }
+  .project {
+    width: 75%;
+  }
 }
 
-@media only screen and (max-width: 500px) {
+@media screen and (min-width: 1200px) {
   main {
-    width: 90%;
-
-    .education {
-      flex-direction: column;
+    width: 65%;
+  }
+  .hero {
+    .hero-text {
+      width: 60%;
     }
+  }
+  .uofc-logo {
+    display: block;
+  }
+  .job-logo {
+    display: block ;
+  }
+  .project {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main {
+    width: 60%;
   }
 }

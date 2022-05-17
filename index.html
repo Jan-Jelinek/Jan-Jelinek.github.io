@@ -7,25 +7,34 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
     <title>Jan Jelinek</title>
   </head>
-  <!--<nav>
-    <div class="nav-item"><a href="#skills">Experience</a></div>
-    <div class="nav-item"><a href="#projects">Projects</a></div>
-    <div class="nav-item"><a href="#contact">Contact</a></div>
-  </nav>-->
   <body>
     <div class="hero" id="hero">
       <div class="hero-text">
         <h1 class="hero-title">Hi! I'm Jan Jelinek.</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla at ex ac ipsum auctor dictum quis a nisi. Nam non odio quis nisi hendrerit tincidunt. Duis ultrices turpis vel orci viverra, vehicula rutrum tellus venenatis. Curabitur tempus hendrerit dolor luctus luctus. Duis ac interdum libero. Maecenas varius quam id lorem tempor, eget blandit mauris consequat. Suspendisse leo est, porttitor eget placerat sed, consectetur nec mi.
+          I fell in love with coding back when I wrote my first lines of code in 2016, and to this day my passion has only grown.
+          I have recently graduated from the University of Calgary with a Bachelor's Degree in Computer Science.
+          In my time at the University I have worked on dozens of projects and with many great people. I am looking for a job where I can continue to grow as a developer.
         </p>
-        <br>
-        <p>Follow me on Github: <a href="https://github.com/Jan-Jelinek">Jan-Jelinek</a>  or send an email at <a href="mailto:JanJelinek.dev@gmail.com">JanJelinek.dev@gmail.com</a></p>
-        <br>
-        <button class="resume">View Resume</button>
+        <p class="follow-text"><b>Check out my Github or send me an email</b><a href=""> </a></p>
+        <div>
+          <button class="links" onclick=" window.open('https://github.com/Jan-Jelinek','_blank')">
+            <img src="images/GitHub-Mark-Light-32px.png" height="20px"> 
+            Jan-Jelinek
+          </button>
+        </div>
+        <div>
+          <button class="links" onclick=" window.open('mailto:JanJelinek.dev@gmail.com','_blank')">
+            <img class="mail" src="images/envelope-fill.svg" height="20px" > 
+            JanJelinek.dev@gmail.com
+          </button>
+        </div>
+        <br><br><br>
+        <form method="get" action="janjelinek_resume.pdf" target="_blank">
+          <button class="resume" type="submit">View Resume</button>
+       </form>
       </div>
     </div>
-    <script src="index.js"></script>
     <main>
       <div class="experience">
         <h1 class="title-1"><span>EXPERIENCE</span></h1>
@@ -90,7 +99,7 @@
           </div>
         </button>
         <button class="project left" onclick=" window.open('https://github.com/stevenloppe/571-term-project','_blank')">
-          <img class="project-image" src="images/stocksentimenttracker2.png">
+          <img class="project-image" src="images/stocksentimenttracker.png">
           <div class="project-header">
             <h2><b>Stock Sentiment Tracker</b></h2>
             <h3><i>Django, Python, MongoDB</i></h3>

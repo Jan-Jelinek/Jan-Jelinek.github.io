@@ -7,39 +7,11 @@ body, html {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  position: fixed;
-  width: 100%;
-}
-
-nav .nav-item {
-  color: white;
-  text-decoration: none;
-  margin: 8px;
-  padding: 1rem;
-}
-
 .hero {
-  /* Set a specific height */
   height: 100vh;
   width: 100%;
   margin: auto;
-  /*
-  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("./images/portfoliobg.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  */
+  color: white;
 }
 
 .hero .hero-text {
@@ -50,7 +22,8 @@ nav .nav-item {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   color: #fff;
-  width: 60%;
+  width: 90%;
+  font-size: 18px;
 }
 
 .hero .hero-text .hero-title {
@@ -68,30 +41,49 @@ nav .nav-item {
   background-color: #111;
   color: white;
   border: 2px solid white;
-  /* Green */
   font-size: 1.2rem;
   -webkit-transition-duration: 0.4s;
           transition-duration: 0.4s;
+  cursor: pointer;
 }
 
-.hero .hero-text button:hover {
+.hero .hero-text .resume:hover {
   background-color: white;
-  /* Green */
   color: black;
+}
+
+.hero .hero-text .follow-text {
+  padding-top: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.hero .hero-text .links {
+  background: none;
+  color: white;
+  font-size: 20px;
+  height: 2rem;
+  border: none;
+  cursor: pointer;
+  padding: 0.6rem 0;
+}
+
+.hero .hero-text .links .mail {
+  -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+          filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
 }
 
 main {
   margin: auto;
-  width: 60%;
+  width: 95%;
   color: white;
 }
 
-main .experience {
+.experience {
   width: 100%;
   padding-bottom: 6rem;
 }
 
-main .experience .education {
+.education {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,13 +102,7 @@ main .experience .education {
   padding-bottom: 2rem;
 }
 
-main .experience .education .uofc-logo {
-  width: 15%;
-  padding-right: 3rem;
-  max-width: 256px;
-}
-
-main .experience .education .uni {
+.education .uni {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -129,7 +115,14 @@ main .experience .education .uni {
           justify-content: space-between;
 }
 
-main .experience .work-experience .job {
+.uofc-logo {
+  display: none;
+  width: 15%;
+  padding-right: 3rem;
+  max-width: 256px;
+}
+
+.work-experience .job {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -146,18 +139,19 @@ main .experience .work-experience .job {
   width: 100%;
 }
 
-main .experience .work-experience .job-accomplishments {
+.work-experience .job-accomplishments {
   font-weight: 300;
   font-size: 1rem;
 }
 
-main .experience .work-experience .job-logo {
+.job-logo {
+  display: none;
   width: 12%;
   padding-left: 3rem;
   max-width: 256px;
 }
 
-main .projects {
+.projects {
   padding-bottom: 6rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -168,7 +162,7 @@ main .projects {
           flex-direction: column;
 }
 
-main .projects .project-type {
+.project-type {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -181,24 +175,37 @@ main .projects .project-type {
       justify-content: space-around;
 }
 
-main .projects .project {
+.left {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+}
+
+.right {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  text-align: end;
+}
+
+.project {
   margin: 2rem 0rem;
   padding: 0.4rem;
-  width: 60%;
+  width: 100%;
   border: 2px solid #fff;
   border-radius: 8px;
   cursor: pointer;
   -webkit-transition-duration: 0.38s;
-  /* Safari */
   transition-duration: 0.38s;
 }
 
-main .projects .project .project-image {
+.project .project-image {
   width: 100%;
   border-radius: 8px;
 }
 
-main .projects .project .project-header {
+.project .project-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -212,38 +219,24 @@ main .projects .project .project-header {
   margin: 0px 16px;
 }
 
-main .projects .project:hover {
+.project:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-main .projects .left {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-}
-
-main .projects .right {
-  -ms-flex-item-align: end;
-      align-self: flex-end;
-  -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
-  text-align: end;
-}
-
-main .contact {
+.contact {
   width: 100%;
   margin: auto;
 }
 
-main .contact .contact-text {
+.contact .contact-text {
   text-align: center;
   color: #fff;
   width: 60%;
   padding: 10rem 0rem;
 }
 
-main .arrow-container {
+.arrow-container {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,14 +247,14 @@ main .arrow-container {
   padding: 2rem;
 }
 
-main .arrow-container .return-arrow {
+.arrow-container .return-arrow {
   cursor: pointer;
   background: none;
   border: 2px solid #fff;
   border-radius: 50%;
 }
 
-main .arrow-container .return-arrow .up {
+.arrow-container .return-arrow .up {
   -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
           filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   width: 24px;
@@ -312,27 +305,45 @@ li {
   padding-bottom: 0.1rem;
 }
 
-@media only screen and (max-width: 1200px) {
-  main {
-    width: 65%;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  main {
-    width: 80%;
-  }
-}
-
-@media only screen and (max-width: 500px) {
+@media screen and (min-width: 600px) {
   main {
     width: 90%;
   }
-  main .education {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    width: 80%;
+  }
+  .hero-text {
+    width: 80%;
+  }
+  .project {
+    width: 75%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    width: 65%;
+  }
+  .hero .hero-text {
+    width: 60%;
+  }
+  .uofc-logo {
+    display: block;
+  }
+  .job-logo {
+    display: block;
+  }
+  .project {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  main {
+    width: 60%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
