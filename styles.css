@@ -75,7 +75,7 @@ body, html {
 
 main {
   margin: auto;
-  width: 95%;
+  width: 90%;
   color: white;
 }
 
@@ -103,14 +103,14 @@ main {
   padding-bottom: 2rem;
 }
 
-.education .uni {
+.uni {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -238,14 +238,13 @@ main {
 }
 
 .arrow-container {
-  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  padding: 2rem;
+  margin: 2rem;
 }
 
 .arrow-container .return-arrow {
@@ -259,7 +258,7 @@ main {
   -webkit-filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
           filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
   width: 24px;
-  padding: 6px;
+  /*padding: 6px;*/
 }
 
 .footer {
@@ -311,9 +310,12 @@ h1, h2, h3, h4, h5, .uni-when, button {
   font-family: 'Montserrat', sans-serif;
 }
 
-@media screen and (min-width: 600px) {
-  main {
-    width: 90%;
+@media screen and (min-width: 500px) {
+  .uni {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
 

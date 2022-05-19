@@ -75,7 +75,7 @@ body, html {
 
 main {
   margin: auto;
-  width: 95%;
+  width: 90%;
   color: white;
 }
 
@@ -93,11 +93,12 @@ main {
   padding-top: 2rem;
   padding-bottom: 2rem;
   
-  .uni {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-  }
+}
+
+.uni {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .uofc-logo {
@@ -195,10 +196,9 @@ main {
   }
 
   .arrow-container {
-    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 2rem;
+    margin: 2rem;
 
     .return-arrow {
       cursor: pointer;
@@ -209,7 +209,7 @@ main {
       .up {
         filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
         width: 24px;
-        padding: 6px;
+        /*padding: 6px;*/
       }
     }
   }
@@ -263,12 +263,12 @@ li {
 h1, h2, h3, h4, h5, .uni-when, button {font-family: 'Montserrat', sans-serif;}
 
 
-@media screen and (min-width: 600px) {
-  main {
-    width: 90%;
+
+@media screen and (min-width: 500px) {
+  .uni {
+    flex-direction: row;
   }
 }
-
 
 @media screen and (min-width: 800px) {
   main {
