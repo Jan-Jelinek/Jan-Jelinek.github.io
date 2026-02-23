@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import Background from "../components/Background.astro";
 ---
 
 <html lang="en">
@@ -9,11 +10,12 @@ import "../styles/global.css";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Jan Jelinek - Personal Site</title>
+		<title>Jan Jelinek Portfolio</title>
 	</head>
 	<body>
 		<main>
             <slot />
         </main>
+		<Background />
     </body>
 </html>
