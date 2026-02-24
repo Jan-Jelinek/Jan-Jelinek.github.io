@@ -1,0 +1,19 @@
+---
+const { stack=[] } = Astro.props;
+
+let colors = new Map(); // lang: text-color, border-color, bg-color
+colors.set("julia", ["#BC6FE0", "#9558B2", "#2F1C38"]);
+colors.set("postgres", ["#50A1E3", "#336791", "#122433"]);
+---
+
+<div class="flex flex-row gap-[0.39rem] mt-2">
+    {stack.length > 0 && stack.map((lang: string) => {
+        const c = colors.get(lang) ?? ["#fff", "#666", "#222"];
+        return (
+            <div class="w-fit px-[0.3rem] pb-1 pt-[0.1rem] border rounded-sm text-sm leading-none"
+                style={`color:${c[0]}; border-color:${c[1]}; background-color:${c[2]};`}>
+                {lang}
+            </div>
+        );
+    })}
+</div>

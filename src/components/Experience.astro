@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import TechStack from '../components/TechStack.astro'
+const { logo, job_title, company, duration, stack } = Astro.props;
+---
+
+<div class="flex flex-row items-top mb-[6%]">
+    <div class="w-[20%] mx-[2%] mt-[3%]">
+        <Image src={logo} alt="company logo" />
+    </div>
+    <div class="w-full">
+        <div class="text-2xl font-bold">{job_title}</div>
+        <div class="flex flex-row justify-between">
+            <div class="text-xl">{company}</div>
+            <div>{duration}</div>
+        </div>
+        <ul class="mt-2 ms-12 list-disc">
+            <slot />
+        </ul>
+        <TechStack stack={stack}/>
+    </div>
+</div>
