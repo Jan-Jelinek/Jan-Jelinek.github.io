@@ -1,12 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import TechStack from '../components/TechStack.astro'
-const { logo, job_title, company, duration, stack } = Astro.props;
+const { logo, logo_class="", job_title, company, duration, stack } = Astro.props;
 ---
 
 <div class="flex flex-row items-top mb-[6%]">
-    <div class="w-[20%] mx-[2%] mt-[3%]">
-        <Image src={logo} alt="company logo" />
+    <div class="w-[20%] mx-[2%] mt-[1.1%]">
+        {logo && <Image src={logo} alt="company logo" class={logo_class} />}
     </div>
     <div class="w-full">
         <div class="text-2xl font-bold">{job_title}</div>

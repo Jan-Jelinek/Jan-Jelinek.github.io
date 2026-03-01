@@ -2,13 +2,19 @@
 import Layout from '../layouts/Layout.astro';
 import SectionHeading from '../components/SectionHeading.astro';
 import Experience from '../components/Experience.astro';
+import CrlsLogo from '../assets/crls-logo-bt.png';
 import EthLogo from '../assets/eth-diamond-(purple).svg';
 ---
 
 <Layout>
 	<SectionHeading>EXPERIENCE</SectionHeading>
 
-	<!-- TODO: add crl synergy experience -->
+	<Experience logo={CrlsLogo} logo_class="w-[92%] border-3 border-white rounded-[15px]" job_title="Fullstack Developer", company="CRL Synergy", duration="MAY 2022 - PRESENT", stack={["python","c#","javascript","postgres","azure"]}>
+		<li>Digitized a paper-based warehouse by launching a Blazor WASM handheld scanner app, improving accuracy and throughput enough to eliminate the need for a warehouse expansion and additional headcount.</li>
+		<li>Architected and automated ERP workflows across supply chain, accounting, QA, and product domains, delivering purchasing automation, inventory forecasting, AQL enforcement, and lot costing controls that improved operational efficiency and financial accuracy.</li>
+		<li>Served as both developer and solutions consultant, partnering directly with cross-functional teams to deeply understand operational workflows and pain points, reframing surface-level requests into scalable ERP solutions that addressed root causes.</li>
+		<li>Founded and scaled the development team (1 → 6), leading onboarding and mentorship while establishing code reviews, quality standards, and testing practices.</li>
+	</Experience>
 
 	<Experience logo={EthLogo} job_title="Research Assistant, DeFi Reseach", company="Professor Alfred Lehar - UofC", duration="JAN 2022 - JUN 2022", stack={["julia","postgres"]}>
 		<li>Designed and implemented a Julia-based block processing system to analyze Ethereum execution traces via Go Ethereum's APIs, detecting internal ETH transfers to block fee recipients.</li>
