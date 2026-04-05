@@ -1,11 +1,12 @@
 export const canvas = (p) => {
     let bg = "#191919"
     let fill = "#444"
-    let textSize = 12
+    let min_textSize = 12
     let noiseLevel = 255
     let noiseScale = 0.007
     const noiseChars = [".", ":", "-", "=", "+", "*", "#", "%"]
 
+    let textSize
     let h
     let w
     let h_half
@@ -18,6 +19,8 @@ export const canvas = (p) => {
     const updateDimensions = () => {
         w = window.innerWidth
         h = window.innerHeight
+
+        textSize = Math.max(min_textSize, Math.floor(h/75))
 
         h_half = h / 2
         w_half = w / 2
@@ -40,9 +43,9 @@ export const canvas = (p) => {
     }
 
     p.setup = () => {
-        p.textSize(textSize)
         p.textAlign(p.CENTER, p.CENTER)
         p.fill(fill)
+
         updateDimensions()        
         p.createCanvas(w, h)
 
@@ -79,6 +82,7 @@ export const canvas = (p) => {
 
     p.windowResized = () => {
         updateDimensions()
+        p.textSize(textSize)
         p.resizeCanvas(w, h)
     }
 }
