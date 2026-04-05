@@ -1,7 +1,13 @@
-<div class="flex flex-row items-center w-[75%] mx-auto mb-[5%]">
+---
+const { empty=false, no_pt=false } = Astro.props;
+---
+
+<div class={`container flex flex-row items-center px-[6%] ${no_pt ? '' : 'pt-[4%]'} pb-[3%] mx-auto`}>
     <div class="w-full border-b-1 border-solid border-white"></div>
-    <div class="min-w-fit px-4 text-3xl font-bold">
-        <slot />
-    </div>
+    {empty==false && 
+        <div class="min-w-fit px-4 text-3xl font-bold">
+            <slot />
+        </div>
+    }
     <div class="w-full border-b-1 border-solid border-white"></div>
 </div>
