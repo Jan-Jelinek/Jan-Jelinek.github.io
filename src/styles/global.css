@@ -1,12 +1,24 @@
 @import "tailwindcss";
 
+@theme {
+  --color-bg: #0b0d10;       /* page background           */
+  --color-surface: #0f1216;  /* cards, raised panels      */
+  --color-fg: #e6e9ee;       /* primary text              */
+  --color-muted: #aab2bd;    /* secondary text, nav links */
+  --color-faint: #5b626c;    /* labels, separators, .dev  */
+  --color-accent: #45c8f0;
+  --color-secondary: #e8e8ec;
+}
+
 body, html {
   height: 100%;
   padding: 0;
   margin: 0;
 
-  color: white;
-  font-family: "JetBrains Mono", monospace;
+  /* background-color: var(--color-bg); */
+  color: var(--color-fg);
+  font-family: 'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  /* font-family: "JetBrains Mono", monospace; */
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;

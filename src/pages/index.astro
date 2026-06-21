@@ -1,69 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro'
-import SectionHeading from '../components/SectionHeading.astro';
+import About from '../components/About.astro';
+import Stack from '../components/Stack.astro';
 import Experience from '../components/Experience.astro';
-import Project from '../components/Project.astro';
-import Footer from "../components/Footer.astro";
-import CrlsLogo from '../assets/crls-logo-bt.png';
-import EthLogo from '../assets/eth-diamond-(purple).svg';
-import uofcLogo from '../assets/uofc.png';
-import Competl from '../assets/competl.jpg';
-import StockSentimentTracker from '../assets/stock-sentiment-tracker.jpg';
-import Bandwagon from '../assets/bandwagon.jpg';
+import Contact from '../components/Contact.astro';
+import Projects from '../components/Projects.astro';
+
+const email = "janjelinek.dev@gmail.com";
+const linkedin = "https://www.linkedin.com/in/jan-jelinek-4917a71a1/"
+const github = "https://github.com/Jan-Jelinek"
 ---
 
 <Layout>
-	<Hero />
-
-	<SectionHeading no_pt>EXPERIENCE</SectionHeading>
-
-	<Experience logo={CrlsLogo} logo_class="w-[92%] border-3 border-white rounded-[15px]" job_title="Fullstack Developer", company="CRL Synergy", duration="MAY 2022 - PRESENT", stack={["python","c#","javascript","postgres","azure"]}>
-		<li>Digitized a paper-based warehouse by launching a Blazor WASM handheld scanner app, improving accuracy and throughput enough to eliminate the need for a warehouse expansion and additional headcount.</li>
-		<li>Architected and automated ERP workflows across supply chain, accounting, QA, and product domains, delivering purchasing automation, inventory forecasting, AQL enforcement, and lot costing controls that improved operational efficiency and financial accuracy.</li>
-		<li>Served as both developer and solutions consultant, partnering directly with cross-functional teams to deeply understand operational workflows and pain points, reframing surface-level requests into scalable ERP solutions that addressed root causes.</li>
-		<li>Founded and scaled the development team (1 → 6), leading onboarding and mentorship while establishing code reviews, quality standards, and testing practices.</li>
-	</Experience>
-
-	<Experience logo={EthLogo} job_title="Research Assistant, DeFi Reseach", company="Professor Alfred Lehar - UofC", duration="JAN 2022 - JUN 2022", stack={["julia","postgres"]}>
-		<li>Developed a Julia-based block processing system to detect internal ETH transfers to block fee recipients by analyzing Ethereum execution traces via Go Ethereum's APIs.</li>
-		<li>Integrated trace data with PostgreSQL blockchain datasets and structured transaction- and transfer-level storage with transactional bulk inserts.</li>
-		<li>Built a concurrent block-scanning pipeline with structured logging and retry/fallback handling to reliably process large historical block ranges.</li>
-	</Experience>
-
-	<Experience logo={uofcLogo} logo_class="w-[60%] ml-auto mr-[15%]" job_title="Bachelor of Science, Computer Science", company="University of Calgary", duration="SEPT 2018 - APR 2022" />
-
-	<SectionHeading>FEATURED PROJECTS</SectionHeading>
-
-	<div class="grid grid-cols-3 gap-5 mx-[3%] mb-[6%]">
-		<Project name="Competl" git="https://github.com/oscarwong67/Competl" link="https://competl.vercel.app/" img={Competl} stack={["mongodb","next.js","react","javascript"]}>
-			<p>
-				Competl is a competitive multiplayer word-guessing game built as a university group project for SENG513, inspired by Wordle but centered around real-time competition.
-				Built with Next.js, React, and MongoDB, the app features a daily 5-letter puzzle shared across all players, with a timer tracking each player's solve speed.
-				Players authenticate via OAuth (Google/GitHub) and compete on a daily leaderboard ranked by completion time and guess efficiency.
-				The game tracks comprehensive statistics including win streaks, best leaderboard placement, and a visual guess-distribution histogram.
-				State is persisted in local storage with automatic daily resets, and the backend uses serverless API routes to handle score submission, leaderboard retrieval, and user stat updates.
-				The project demonstrates full-stack development across authentication, real-time competitive scoring, and responsive UI with Material-UI.
-			</p>
-		</Project>
-		<Project name="Stock Sentiment Tracker" git="https://github.com/stevenloppe/571-term-project" img={StockSentimentTracker} stack={["sqlite","django","python"]}>
-			<p>
-				Stock Sentiment Tracker is a full-stack web application built with Django that analyzes public sentiment toward stocks by processing tweets fetched via the Twitter API.
-				For a given stock ticker, the app retrieves recent tweets, runs them through a custom NLP pipeline using Stanford's Stanza library, and computes a sentiment score by combining lexicon-based text analysis (using a financial-domain word list with negation handling) with emoji sentiment data.
-				These scores are aggregated into a weighted average — giving more influence to highly-retweeted posts — and displayed on a clean Bootstrap frontend with a sentiment scale, tweet breakdowns, and embedded featured tweets.
-				The app also includes a model evaluation page that backtests sentiment predictions against historical Yahoo Finance price data across 100 major stocks, measuring how often a positive/negative sentiment signal correctly predicted the next day's price direction.
-			</p>
-		</Project>
-		<Project name="Bandwagon" git="https://github.com/RMcCurdy/Bandwagon/tree/main" img={Bandwagon} stack={["sqlite","asp.net","react","javascript"]}>
-			<p>
-				Bandwagon is a full-stack NBA prediction gaming platform built as a group project for CPSC 471 (Database Management Systems).
-				Users create accounts, vote on upcoming NBA game outcomes before tip-off, and earn points based on prediction accuracy — with a twist: correctly picking the underdog pays out more than picking the favourite, incentivizing strategic risk-taking.
-				The backend is built with ASP.NET Core (C#) and Entity Framework Core against a SQLite database with 13 entities, exposing a RESTful API with Swagger documentation.
-				The frontend is a React.js SPA using the Context API for state management and Axios for data fetching.
-				Beyond the core prediction loop, the platform includes a merchandise shop where users redeem earned points for prizes, a badge/achievement system, a global leaderboard, and an admin panel for updating game scores and triggering a weighted prediction algorithm to calculate team win probabilities and point payouts.
-			</p>
-		</Project>
-	</div>
-
-	<Footer />
+	<Hero email={email} linkedin={linkedin} github={github}/>
+	<About />
+	<Stack />
+	<Experience />
+	<Projects />
+	<Contact email={email} linkedin={linkedin} github={github}/>
 </Layout>

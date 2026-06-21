@@ -1,0 +1,48 @@
+---
+interface Props {
+  /** Element to render as. Default "div". */
+  as?: keyof HTMLElementTagNameMap;
+  /** Lift + accent border on hover (use for clickable cards, e.g. Projects). */
+  hover?: boolean;
+  /** Thin accent rule along the top edge. */
+  accentEdge?: boolean;
+  /** Padding preset. "none" for media-edge cards that pad their own content. */
+  pad?: "none" | "sm" | "md" | "lg";
+  /** Corner rounding. */
+  radius?: "md" | "lg";
+  /** Extra classes merged onto the card. */
+  class?: string;
+  [key: string]: unknown;
+}
+
+const {
+  as = "div",
+  hover = false,
+  accentEdge = false,
+  pad = "md",
+  radius = "md",
+  class: className = "",
+  ...rest
+} = Astro.props as Props;
+
+const Tag = as;
+
+const padMap = { none: "", sm: "p-4", md: "p-[22px]", lg: "p-[clamp(36px,6vw,64px)]" };
+const radiusMap = { md: "rounded-[9px]", lg: "rounded-[14px]" };
+---
+
+<Tag
+  class:list={[
+    // Base frosted surface — the shared treatment.
+    "border border-white/[0.12] bg-white/[0.015] backdrop-blur-[2px]",
+    radiusMap[radius],
+    padMap[pad],
+    accentEdge && "border-t-2 border-t-accent",
+    hover &&
+      "transition-[border-color,transform] duration-200 hover:-translate-y-[3px] hover:border-accent/50",
+    className,
+  ]}
+  {...rest}
+>
+  <slot />
+</Tag>

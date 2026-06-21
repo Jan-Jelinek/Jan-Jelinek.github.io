@@ -1,22 +1,121 @@
 ---
 import { Image } from 'astro:assets';
-import TechStack from '../components/TechStack.astro'
-const { logo, logo_class="", job_title, company, duration, stack } = Astro.props;
+import type { ImageMetadata } from 'astro';
+
+import SectionTitle from './common/SectionTitle.astro';
+import CrlsLogo from '../assets/crls-logo-bt.png';
+import EthLogo from '../assets/eth-diamond-(purple).svg';
+import uofcLogo from '../assets/uofc.png';
+
+interface Entry {
+  role: string;
+  org: string;
+  date: string;
+  bullets?: string[];
+  description?: string;
+  tags?: string[];
+  image?: ImageMetadata;
+  image_class: string;
+}
+
+const entries: Entry[] = [
+  {
+    role: "Senior Fullstack Developer",
+    org: "CRL Synergy",
+    date: "MAY 2022 — PRESENT",
+    bullets: [
+      "Digitized a paper-based warehouse with a Blazor WASM handheld scanner app, lifting accuracy and throughput enough to eliminate a planned warehouse expansion and added headcount.",
+      "Architected and automated ERP workflows across supply chain, accounting, QA, and product — purchasing automation, inventory forecasting, AQL enforcement, and lot-costing controls.",
+      "Worked as developer and solutions consultant, reframing surface-level requests into scalable ERP solutions that addressed root causes.",
+      "Founded and scaled the dev team (1 → 6), establishing code reviews, quality standards, and testing practices.",
+    ],
+    tags: ["python", "c#", "javascript", "postgres", "azure"],
+    image: CrlsLogo,
+    image_class: "w-[92%] border-3 border-white rounded-[15px]",
+  },
+  {
+    role: "Research Assistant, DeFi Research",
+    org: "Professor Alfred Lehar · University of Calgary",
+    date: "JAN 2022 — JUN 2022",
+    bullets: [
+      "Built a Julia block-processing system to detect internal ETH transfers to block fee recipients by analyzing Ethereum execution traces via go-ethereum's APIs.",
+      "Integrated trace data with PostgreSQL blockchain datasets, structuring transaction- and transfer-level storage with transactional bulk inserts.",
+      "Engineered a concurrent block-scanning pipeline with structured logging and retry/fallback handling to reliably process large historical block ranges.",
+    ],
+    tags: ["julia", "postgres", "go-ethereum"],
+    image: EthLogo,
+    image_class: "",
+  },
+  {
+    role: "B.Sc. Computer Science",
+    org: "University of Calgary",
+    date: "SEPT 2018 — APR 2022",
+    description:
+      "Coursework spanning databases, distributed systems, and software engineering — foundations I now apply to ERP architecture and data-intensive backends.",
+    image: uofcLogo,
+    image_class: "w-[60%] ml-auto mr-[15%]",
+  },
+];
 ---
 
-<div class="container flex flex-row items-top pb-[3%]">
-    <div class="w-[20%] mx-[2%] mt-[1.1%]">
-        {logo && <Image src={logo} alt="company logo" class={logo_class} />}
-    </div>
-    <div class="w-full self-center">
-        <div class="text-2xl font-bold">{job_title}</div>
-        <div class="flex flex-row justify-between">
-            <div class="text-xl">{company}</div>
-            <div>{duration}</div>
+<section id="experience" class="mx-auto max-w-[1080px] scroll-mt-20 px-7 pb-[clamp(64px,9vw,110px)]">
+  <SectionTitle prefix="03" label="experience"/>
+
+  <div class="flex flex-col">
+    {
+      entries.map((entry) => (
+        <div class="grid grid-cols-1 gap-9 border-b border-white/[0.07] py-11 first:pt-0 last:border-b-0 last:pb-0 md:grid-cols-[200px_1fr]">
+          {/* Meta */}
+          <div class="w-[92%] mx-[2%] mt-[1.1%]">
+            {entry.image && (
+              <Image
+                src={entry.image}
+                alt={`${entry.org} logo`}
+                class={entry.image_class}
+              />
+            )}
+          </div>
+
+          {/* Content */}
+          <div>
+            <div class="flex flex=row justify-between items-center">
+                <h3 class="text-[clamp(19px,2.3vw,25px)] font-semibold tracking-[-0.01em] text-fg">
+                {entry.role}
+                </h3>
+                <div class="text-[12px] tracking-[0.06em] text-secondary">{entry.date}</div>
+            </div>
+
+            <div class="mt-1 text-[14px] text-accent">{entry.org}</div>
+
+            {entry.bullets && (
+              <ul class="mt-[18px] flex flex-col gap-[13px]">
+                {entry.bullets.map((bullet) => (
+                  <li class="flex gap-3 text-[14px] leading-[1.65] text-muted">
+                    <span class="flex-none">—</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            {entry.description && (
+              <p class="mt-[14px] max-w-[60ch] text-[14px] leading-[1.7] text-muted">
+                {entry.description}
+              </p>
+            )}
+
+            {entry.tags && (
+              <div class="mt-[18px] flex flex-wrap gap-[7px]">
+                {entry.tags.map((tag) => (
+                  <span class="rounded-[4px] border border-white/10 px-[9px] py-1 text-[12px] text-faint">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
-        <ul class="mt-2 ms-12 list-disc">
-            <slot />
-        </ul>
-        <TechStack stack={stack}/>
-    </div>
-</div>
+      ))
+    }
+  </div>
+</section>

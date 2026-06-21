@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import Card from "./common/Card.astro";
+import SectionTitle from './common/SectionTitle.astro';
+
+import Competl from '../assets/competl.jpg';
+import StockSentimentTracker from '../assets/stock-sentiment-tracker.jpg';
+import Bandwagon from '../assets/bandwagon.jpg';
+
+interface Project {
+  title: string;
+  blurb: string;
+  tags: string[];
+  live?: string;
+  code?: string;
+  image?: ImageMetadata;
+}
+
+const projects: Project[] = [
+  {
+    title: "Competl",
+    blurb:
+      "A competitive multiplayer word game (SENG513) \u2014 Wordle reimagined around real-time competition. OAuth login, a daily shared puzzle, live leaderboard, and a serverless scoring backend.",
+    tags: ["next.js", "react", "mongodb"],
+    live: "http://competl.vercel.app/",
+    code: "https://github.com/oscarwong67/Competl",
+    image: Competl,
+  },
+  {
+    title: "Stock Sentiment Tracker",
+    blurb:
+      "A Django app scoring public sentiment for any ticker via a custom NLP pipeline (Stanford Stanza) with negation and emoji handling. Includes a backtest page checking signals against historical prices across 100 stocks.",
+    tags: ["python", "django", "sqlite"],
+    code: "https://github.com/stevenloppe/571-term-project",
+    image: StockSentimentTracker,
+  },
+  {
+    title: "Bandwagon",
+    blurb:
+      "A full-stack NBA prediction platform (CPSC 471) \u2014 vote on outcomes before tip-off and earn points, where picking the underdog pays more. ASP.NET Core + EF Core over SQLite, React SPA, shop, badges, and admin panel.",
+    tags: ["asp.net", "react", "sqlite"],
+    code: "https://github.com/RMcCurdy/Bandwagon",
+    image: Bandwagon,
+  },
+];
+---
+
+<section id="projects" class="mx-auto max-w-[1080px] scroll-mt-20 px-7 pb-[clamp(64px,9vw,110px)]">
+  <SectionTitle prefix="04" label="projects"/>
+
+  <div class="grid grid-cols-1 gap-[18px] md:grid-cols-3">
+    {
+      projects.map((project) => (
+        <Card as="article" hover pad="none" radius="md" class="flex flex-col overflow-hidden">
+          {project.image ? (
+            <Image
+              src={project.image}
+              alt={`${project.title} screenshot`}
+              class="h-40 w-full border-b border-white/[0.07] object-cover"
+            />
+          ) : (
+            <div
+              class="flex h-40 items-center justify-center border-b border-white/[0.07] text-[11px] text-faint"
+              style="background:repeating-linear-gradient(135deg,rgba(255,255,255,.025) 0 8px,transparent 8px 16px)"
+            >
+              screenshot &middot; {project.title.toLowerCase()}
+            </div>
+          )}
+
+          <div class="flex flex-1 flex-col gap-3 px-[18px] pb-5 pt-[18px]">
+            <div class="flex items-center justify-between">
+              <h3 class="text-[17px] font-semibold text-fg">{project.title}</h3>
+              <div class="flex gap-3 text-[12px]">
+                {project.live && (
+                  <a href={project.live} class="text-accent">
+                    live &nearr;
+                  </a>
+                )}
+                {project.code && (
+                  <a href={project.code} class="text-muted transition-colors hover:text-fg">
+                    code
+                  </a>
+                )}
+              </div>
+            </div>
+
+            <p class="flex-1 text-[13px] leading-[1.65] text-muted">{project.blurb}</p>
+
+            <div class="flex flex-wrap gap-[6px]">
+              {project.tags.map((tag) => (
+                <span class="rounded-[4px] border border-white/10 px-2 py-[3px] text-[11.5px] text-muted">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</section>

@@ -1,0 +1,62 @@
+---
+import Card from "./common/Card.astro";
+import SectionTitle from './common/SectionTitle.astro';
+
+const { email, linkedin, github } = Astro.props;
+---
+
+<section id="contact" class="mx-auto max-w-[1080px] scroll-mt-20 px-7 pb-[clamp(72px,10vw,120px)]">
+  <SectionTitle prefix="05" label="contact"/>
+
+  <Card radius="lg" pad="lg" class="relative overflow-hidden">
+    <!-- accent glow -->
+    <div
+      class="pointer-events-none absolute -top-[40%] -right-[10%] h-[420px] w-[420px]"
+      style="background:radial-gradient(closest-side,color-mix(in oklab,var(--color-accent) 12%,transparent),transparent)"
+    >
+    </div>
+
+    <p class="relative text-[12.5px] uppercase tracking-[0.2em] text-accent">
+      // get in touch
+    </p>
+
+    <h2
+      class="relative mt-[18px] text-[clamp(28px,5vw,52px)] font-bold leading-[1.05] tracking-[-0.02em] text-fg"
+    >
+      Let&rsquo;s build something together.
+    </h2>
+
+    <p class="relative mt-[18px] text-[15px] leading-[1.7] text-muted">
+      Have a problem worth solving? Reach out.
+    </p>
+
+    <div class="relative mt-[30px] flex flex-wrap items-center gap-3">
+      <a
+        href={`mailto:${email}`}
+        class="inline-flex items-center gap-2 rounded-[7px] bg-secondary px-[18px] py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+      >
+        {email}
+      </a>
+      <a
+        href={`${github}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-[7px] border border-white/[0.12] px-[18px] py-3 text-sm text-[#cfd5dd] transition-colors hover:border-accent"
+      >
+        github &nearr;
+      </a>
+      <a
+        href={`${linkedin}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-[7px] border border-white/[0.12] px-[18px] py-3 text-sm text-[#cfd5dd] transition-colors hover:border-accent"
+      >
+        linkedin &nearr;
+      </a>
+    </div>
+
+    <p class="relative mt-7 text-[12.5px] text-faint">
+      based in Calgary, AB
+    </p>
+  </Card>
+</section>

@@ -1,0 +1,36 @@
+---
+interface Props {
+  /** Heading text, e.g. "projects". */
+  label: string;
+  /** Leading sigil before the label. */
+  prefix?: string;
+  /** Extra classes (e.g. bottom margin) merged onto the wrapper. */
+  class?: string;
+}
+
+const { label, prefix = "//", class: className = "mb-[38px]" } = Astro.props;
+
+// A dash run long enough to overflow any realistic column; the container clips it.
+const dashes = "-".repeat(200);
+---
+
+<!-- <p
+  class:list={[
+    "flex items-center gap-3 text-[12px] uppercase tracking-[0.22em] text-accent",
+    className,
+  ]}
+>
+  <span class="whitespace-nowrap">{prefix} {label}</span>
+  <span
+    aria-hidden="true"
+    class="min-w-0 max-w-[41rem] flex-1 select-none overflow-hidden whitespace-nowrap"
+  >
+    {dashes}
+  </span>
+</p> -->
+
+<p class="mb-[30px] flex items-center gap-3 text-[12px] uppercase tracking-[0.22em] text-faint text-shadow-accent">
+  <span class="font-semibold text-accent">{prefix}</span>
+  <span>/ {label}</span>
+  <span class="h-px flex-1 bg-faint/50"></span>
+</p>

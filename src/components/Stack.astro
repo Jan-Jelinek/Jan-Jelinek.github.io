@@ -1,0 +1,54 @@
+---
+import Card from "./common/Card.astro";
+import SectionTitle from './common/SectionTitle.astro';
+
+interface Category {
+  label: string;
+  items: string[];
+}
+
+const categories: Category[] = [
+  {
+    label: "languages",
+    items: ["Python", "C#", "Rust", "Javascript"],
+  },
+  {
+    label: "frameworks",
+    items: ["ASP.NET", "Blazor", "Odoo", "Django"],
+  },
+  {
+    label: "databases",
+    items: ["PostgreSQL", "SQLite", "MongoDB"],
+  },
+  {
+    label: "infrastructure & tools",
+    items: ["Azure", "Docker", "CI/CD pipelines", "Git", "Jira"],
+  },
+];
+---
+
+<section id="stack" class="mx-auto max-w-[1080px] scroll-mt-20 px-7 pb-[clamp(64px,9vw,110px)]">
+  <SectionTitle prefix="02" label="stack"/>
+
+  <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+    {
+      categories.map((category) => (
+        <Card>
+          <div class="mb-4 flex items-center gap-[9px]">
+            <span class="text-[13px] text-accent">▹</span>
+            <span class="text-[13px] font-semibold uppercase tracking-[0.14em] text-fg">
+              {category.label}
+            </span>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            {category.items.map((item) => (
+              <span class="rounded-[5px] border border-white/[0.12] bg-[#1d222a] px-[11px] py-[6px] text-[13px] text-muted">
+                {item}
+              </span>
+            ))}
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</section>

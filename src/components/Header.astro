@@ -1,0 +1,49 @@
+---
+import LogoSvg from '../../public/favicon.svg';
+
+const links = [
+    { label: "about", href: "#about" },
+    { label: "stack", href: "#stack" },
+    { label: "experience", href: "#experience" },
+    { label: "projects", href: "#projects" },
+];
+---
+
+<header id="site-header" class="fixed inset-x-0 top-0 z-30 border-b border-white/[0.06] bg-bg/70 backdrop-blur-md">
+    <nav class="mx-auto flex max-w-[1080px] items-center justify-between gap-[18px] px-7 py-3.5">
+        <a href="#top" class="flex items-center text-sm font-semibold tracking-[0.02em] text-fg">
+            <!-- <span class="h-[9px] w-[9px] rounded-[2px] bg-accent shadow-[0_0_10px_var(--color-accent)]"></span> -->
+             <LogoSvg class="mr-1 h-[18px] w-[18px]"/>
+            janjelinek<span class="text-faint">.dev</span>
+        </a>
+
+        <div class="hidden items-center gap-6 text-[13px] text-muted md:flex">
+            {
+                links.map((link) => (
+                    <a href={link.href} class="transition-colors hover:text-fg">
+                        {link.label}
+                    </a>
+                ))
+            }
+        </div>
+        <a href="#contact" class="inline-flex items-center gap-2 rounded-[5px] border border-secondary/45 px-[13px] py-[7px] text-[12.5px] text-secondary transition-colors hover:bg-secondary/10">
+            <span class="h-[7px] w-[7px] rounded-full bg-secondary shadow-[0_0_8px_var(--color-secondary)]"></span>
+            contact
+        </a>
+    </nav>
+</header>
+
+<!-- Spacer: reserves the fixed header's height so page content starts below it. -->
+<div data-header-spacer aria-hidden="true"></div>
+
+<script>
+  // Keep the spacer exactly as tall as the fixed header, even as it reflows.
+  const header = document.getElementById("site-header");
+  const spacer = document.querySelector("[data-header-spacer]") as HTMLElement | null;
+  const sync = () => {
+    if (header && spacer) spacer.style.height = `${header.offsetHeight}px`;
+  };
+  sync();
+  window.addEventListener("resize", sync);
+  if (header) new ResizeObserver(sync).observe(header);
+</script>
