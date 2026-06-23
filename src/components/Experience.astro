@@ -64,25 +64,27 @@ const entries: Entry[] = [
   <div class="flex flex-col">
     {
       entries.map((entry) => (
-        <div class="grid grid-cols-1 gap-9 border-b border-white/[0.07] py-11 first:pt-0 last:border-b-0 last:pb-0 md:grid-cols-[200px_1fr]">
+        <div class="grid grid-cols-1 gap-y-4 gap-x-6 border-b border-white/[0.07] py-8 first:pt-0 last:border-b-0 last:pb-0 md:gap-y-9 md:py-11 md:grid-cols-[160px_1fr] lg:grid-cols-[180px_1fr]">
           {/* Meta */}
-          <div class="w-[92%] mx-[2%] mt-[1.1%]">
-            {entry.image && (
-              <Image
-                src={entry.image}
-                alt={`${entry.org} logo`}
-                class={entry.image_class}
-              />
-            )}
+          <div class="mt-1">
+            <div class="w-full max-w-[130px] md:max-w-[145px] lg:max-w-[165px]">
+              {entry.image && (
+                <Image
+                  src={entry.image}
+                  alt={`${entry.org} logo`}
+                  class={entry.image_class}
+                />
+              )}
+            </div>
           </div>
 
           {/* Content */}
           <div>
-            <div class="flex flex=row justify-between items-center">
+            <div class="flex flex-col gap-1 sm:flex-row sm:justify-between sm:items-center sm:gap-4">
                 <h3 class="text-[clamp(19px,2.3vw,25px)] font-semibold tracking-[-0.01em] text-fg">
                 {entry.role}
                 </h3>
-                <div class="text-[12px] tracking-[0.06em] text-secondary">{entry.date}</div>
+                <div class="shrink-0 text-[12px] tracking-[0.06em] text-secondary">{entry.date}</div>
             </div>
 
             <div class="mt-1 text-[14px] text-accent">{entry.org}</div>
@@ -107,7 +109,7 @@ const entries: Entry[] = [
             {entry.tags && (
               <div class="mt-[18px] flex flex-wrap gap-[7px]">
                 {entry.tags.map((tag) => (
-                  <span class="rounded-[4px] border border-white/10 px-[9px] py-1 text-[12px] text-faint">
+                  <span class="rounded-[5px] border border-white/[0.08] bg-white/[0.03] px-[11px] py-[5px] text-[12.5px] text-muted transition-colors duration-200 hover:border-accent/40 hover:text-fg">
                     {tag}
                   </span>
                 ))}

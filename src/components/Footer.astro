@@ -3,13 +3,15 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-white/[0.06] bg-bg/70 backdrop-blur-md">
-  <div class="mx-auto flex max-w-[1080px] flex-wrap items-center justify-between gap-[14px] px-7 py-[26px] text-[12.5px] text-faint">
+  <div
+    class="mx-auto flex max-w-[1080px] flex-col items-start gap-3 px-7 py-[26px] text-[12.5px] text-faint sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:gap-[14px]"
+  >
     <span>&copy; {year} Jan Jelinek</span>
 
-    <span class="text-faint/60">designed with the help of Claude</span>
+    <span class="text-faint">built with astro + tailwind</span>
 
-    <button class="cursor-pointer text-muted transition-colors hover:text-accent" onclick="window.scroll({top: 0, left: 0, behavior: 'smooth'})">
-      back to top &uarr;
-    </button>  
+    <a href="#top" class="text-muted transition-colors hover:text-accent">
+      back to top ↑
+    </a>
   </div>
 </footer>

@@ -27,13 +27,13 @@ const { email, linkedin, github } = Astro.props;
     </h2>
 
     <p class="relative mt-[18px] text-[15px] leading-[1.7] text-muted">
-      Have a problem worth solving? Reach out.
+      Want to build something new? The fastest way to reach me is email.
     </p>
 
     <div class="relative mt-[30px] flex flex-wrap items-center gap-3">
       <a
         href={`mailto:${email}`}
-        class="inline-flex items-center gap-2 rounded-[7px] bg-secondary px-[18px] py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90"
+        class="inline-flex w-full items-center justify-center gap-2 rounded-[7px] bg-secondary px-[18px] py-3 text-sm font-semibold text-bg transition-opacity hover:opacity-90 break-all sm:w-auto sm:justify-start"
       >
         {email}
       </a>

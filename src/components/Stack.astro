@@ -33,16 +33,16 @@ const categories: Category[] = [
   <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
     {
       categories.map((category) => (
-        <Card>
-          <div class="mb-4 flex items-center gap-[9px]">
-            <span class="text-[13px] text-accent">▹</span>
-            <span class="text-[13px] font-semibold uppercase tracking-[0.14em] text-fg">
+        <Card padMap="sm">
+          <div class="mb-[12px] flex items-center gap-[10px] border-b border-white/[0.08] pb-[6px]">
+            <span class="h-[5px] w-[5px] rotate-45 bg-accent"></span>
+            <span class="text-[12px] font-semibold uppercase tracking-[0.18em] text-fg">
               {category.label}
             </span>
           </div>
-          <div class="flex flex-wrap gap-2">
+          <div class="flex flex-wrap gap-[7px]">
             {category.items.map((item) => (
-              <span class="rounded-[5px] border border-white/[0.12] bg-[#1d222a] px-[11px] py-[6px] text-[13px] text-muted">
+              <span class="rounded-[5px] border border-white/[0.08] bg-white/[0.03] px-[11px] py-[5px] text-[12.5px] text-muted transition-colors duration-200 hover:border-accent/40 hover:text-fg">
                 {item}
               </span>
             ))}

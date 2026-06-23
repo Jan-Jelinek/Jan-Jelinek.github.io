@@ -3,7 +3,7 @@ export const canvas = (p) => {
     // Config ---------------------------------------
     const BG = "#0b0d10";
     // const CHAR_RGB = [250, 250, 251];
-    const CHAR_RGB = [50, 50, 51];
+    const CHAR_RGB = [60, 60, 62];
     // const CHAR_RGB = [67, 67, 67];
     const MIN_TEXT_SIZE = 12;
     const NOISE_SCALE = 0.004;
